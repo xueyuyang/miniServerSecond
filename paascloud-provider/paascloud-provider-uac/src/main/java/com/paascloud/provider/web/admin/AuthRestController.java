@@ -84,6 +84,7 @@ public class AuthRestController extends BaseController {
 		UacUser uacUser = new UacUser();
 		uacUser.setStatus(UacUserStatusEnum.ENABLE.getKey());
 		uacUser.setEmail(email);
+		uacUser.setAppId(getAppId());
 		int count = uacUserService.selectCount(uacUser);
 		return WrapMapper.ok(count > 0);
 	}
